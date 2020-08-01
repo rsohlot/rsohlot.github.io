@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>An intuition of CNN</title><style>
+  * {
+    font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  }
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+  h1 {
+    font-size: 50px;
+    margin-bottom: 17px;
+    color: #333;
+  }
+  h2 {
+    font-size: 24px;
+    line-height: 1.6;
+    margin: 30px 0 0 0;
+    margin-bottom: 18px;
+    margin-top: 33px;
+    color: #333;
+  }
+  h3 {
+    font-size: 30px;
+    margin: 10px 0 20px 0;
+    color: #333;
+  }
+  header {
+    width: 640px;
+    margin: auto;
+  }
+  section {
+    width: 640px;
+    margin: auto;
+  }
+  section p {
+    margin-bottom: 27px;
+    font-size: 20px;
+    line-height: 1.6;
+    color: #333;
+  }
+  section img {
+    max-width: 640px;
+  }
+  footer {
+    padding: 0 20px;
+    margin: 50px 0;
+    text-align: center;
+    font-size: 12px;
+  }
+  .aspectRatioPlaceholder {
+    max-width: auto !important;
+    max-height: auto !important;
+  }
+  .aspectRatioPlaceholder-fill {
+    padding-bottom: 0 !important;
+  }
+  header,
+  section[data-field=subtitle],
+  section[data-field=description] {
+    display: none;
+  }
+  </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">An intuition of CNN</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+A basic implementation of the CNN with numpy and matplotlib.
+</section>
+<section data-field="body" class="e-content">
+<section name="ce98" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="321a" id="321a" class="graf graf--h3 graf--leading graf--title">An intuition of CNN</h3><figure name="f6fd" id="f6fd" class="graf graf--figure graf-after--h3"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 294px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 41.9%;"></div><img class="graf-image" data-image-id="1*8-FA9x7VgwDnAZ_mEjXmmg.png" data-width="1366" data-height="573" src="https://cdn-images-1.medium.com/max/800/1*8-FA9x7VgwDnAZ_mEjXmmg.png"></div></figure><p name="d2e9" id="d2e9" class="graf graf--p graf-after--figure">Summary: A basic implementation of CNN with numpy, matplotlib.Tried the CNN on images when object is shifted, rotated and object image with noise.</p><p name="13a2" id="13a2" class="graf graf--p graf-after--p">Lets try an example of CNN by taking a 6 x 6 pixel image of a triangle.</p><figure name="a42d" id="a42d" class="graf graf--figure graf--iframe graf-after--p"><iframe src="https://jovian.ml/embed?url=https://jovian.ml/rsohlot/cnn-intuition/v/1&amp;cellId=4" width="700" height="175" frameborder="0" scrolling="no"></iframe></figure><figure name="b95b" id="b95b" class="graf graf--figure graf--iframe graf-after--figure"><iframe src="https://jovian.ml/embed?url=https://jovian.ml/rsohlot/cnn-intuition/v/1&amp;cellId=6" width="700" height="175" frameborder="0" scrolling="no"></iframe></figure><ul class="postList"><li name="bcba" id="bcba" class="graf graf--li graf-after--figure">Apply CNN to the triangle image with the kernel of 2x3 pixel (generally you will find a square kernels)</li></ul><figure name="35e4" id="35e4" class="graf graf--figure graf--iframe graf-after--li"><iframe src="https://jovian.ml/embed?url=https://jovian.ml/rsohlot/cnn-intuition/v/1&amp;cellId=5" width="700" height="175" frameborder="0" scrolling="no"></iframe></figure><ul class="postList"><li name="e99f" id="e99f" class="graf graf--li graf-after--figure">Result:</li></ul><figure name="70af" id="70af" class="graf graf--figure graf--iframe graf-after--li"><iframe src="https://jovian.ml/embed?url=https://jovian.ml/rsohlot/cnn-intuition/v/1&amp;cellId=7" width="700" height="175" frameborder="0" scrolling="no"></iframe></figure><p name="8785" id="8785" class="graf graf--p graf-after--figure">As the result, the kernel detects the triangle in the image.</p><ul class="postList"><li name="b983" id="b983" class="graf graf--li graf-after--p">Now lets try when triangle is shift in the image.</li></ul><figure name="dcc1" id="dcc1" class="graf graf--figure graf--iframe graf-after--li"><iframe src="https://jovian.ml/embed?url=https://jovian.ml/rsohlot/cnn-intuition/v/1&amp;cellId=8" width="700" height="175" frameborder="0" scrolling="no"></iframe></figure><p name="6628" id="6628" class="graf graf--p graf-after--figure">Now lets apply the same kernel to this image.</p><figure name="671a" id="671a" class="graf graf--figure graf--iframe graf-after--p"><iframe src="https://jovian.ml/embed?url=https://jovian.ml/rsohlot/cnn-intuition/v/1&amp;cellId=9" width="700" height="175" frameborder="0" scrolling="no"></iframe></figure><p name="cb63" id="cb63" class="graf graf--p graf-after--figure">Perfect, it detects the triangle in the other portion of the image.</p><p name="cc50" id="cc50" class="graf graf--p graf-after--p">Now, Lets try when we rotate the image 180 degree and 90 degree.</p><figure name="a8e5" id="a8e5" class="graf graf--figure graf--iframe graf-after--p"><iframe src="https://jovian.ml/embed?url=https://jovian.ml/rsohlot/cnn-intution/v/1&amp;cellId=10" width="700" height="175" frameborder="0" scrolling="no"></iframe><figcaption class="imageCaption">180 degree rotated triangle</figcaption></figure><figure name="0548" id="0548" class="graf graf--figure graf--iframe graf-after--figure"><iframe src="https://jovian.ml/embed?url=https://jovian.ml/rsohlot/cnn-intution/v/1&amp;cellId=11" width="700" height="175" frameborder="0" scrolling="no"></iframe><figcaption class="imageCaption">cnn on rotated triangle</figcaption></figure><figure name="4a37" id="4a37" class="graf graf--figure graf--iframe graf-after--figure"><iframe src="https://jovian.ml/embed?url=https://jovian.ml/rsohlot/cnn-intution/v/1&amp;cellId=12" width="700" height="175" frameborder="0" scrolling="no"></iframe><figcaption class="imageCaption">90 degree rotated triangle</figcaption></figure><figure name="94ba" id="94ba" class="graf graf--figure graf--iframe graf-after--figure"><iframe src="https://jovian.ml/embed?url=https://jovian.ml/rsohlot/cnn-intution/v/1&amp;cellId=13" width="700" height="175" frameborder="0" scrolling="no"></iframe><figcaption class="imageCaption">CNN on 90 degree rotated triangle image</figcaption></figure><ul class="postList"><li name="ada9" id="ada9" class="graf graf--li graf-after--figure">Our kernel detects triangle perfectly even when when our object (triangle) is rotated.</li><li name="b6c0" id="b6c0" class="graf graf--li graf-after--li">Lets try go some more practical, add some noise to the image.</li></ul><figure name="f058" id="f058" class="graf graf--figure graf--iframe graf-after--li"><iframe src="https://jovian.ml/embed?url=https://jovian.ml/rsohlot/cnn-intution/v/1&amp;cellId=14" width="700" height="175" frameborder="0" scrolling="no"></iframe><figcaption class="imageCaption">Noisy image of the 90 degree rotated triangle image</figcaption></figure><p name="3ffa" id="3ffa" class="graf graf--p graf-after--figure">Now,lets apply our same kernel to the noisy image.</p><figure name="f2ba" id="f2ba" class="graf graf--figure graf--iframe graf-after--p"><iframe src="https://jovian.ml/embed?url=https://jovian.ml/rsohlot/cnn-intution/v/1&amp;cellId=14" width="700" height="175" frameborder="0" scrolling="no"></iframe><figcaption class="imageCaption">CNN on the noisy image of the 90 degree rotated triangle image</figcaption></figure><p name="d061" id="d061" class="graf graf--p graf-after--figure">There is some noise in the result,but our kernel successfully detect the triangle in the noisy image.</p><p name="9c7b" id="9c7b" class="graf graf--p graf-after--p">Note: It is a basic implementation of the CNN to get the idea of it and to make you more curious about it.</p><p name="3d14" id="3d14" class="graf graf--p graf-after--p graf--trailing">Best way is to implement it by our own.Here the the <a href="https://jovian.ml/rsohlot/cnn-intuition" data-href="https://jovian.ml/rsohlot/cnn-intuition" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">source</a>.</p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@rsohlot" class="p-author h-card">Rohit Sohlot</a> on <a href="https://medium.com/p/8a475fd64355"><time class="dt-published" datetime="2020-07-06T03:35:39.007Z">July 6, 2020</time></a>.</p><p><a href="https://medium.com/@rsohlot/an-intuition-of-cnn-8a475fd64355" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on July 18, 2020.</p></footer></article></body></html>

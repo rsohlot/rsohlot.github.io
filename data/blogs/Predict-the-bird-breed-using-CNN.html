@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Predict the bird breed using CNN</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Predict the bird breed using CNN</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+source: notebook, data
+</section>
+<section data-field="body" class="e-content">
+<section name="38f1" class="section section--body section--first"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="bde7" id="bde7" class="graf graf--h3 graf--leading graf--title">Predict the bird breed using CNN</h3><figure name="9382" id="9382" class="graf graf--figure graf-after--h3"><div class="aspectRatioPlaceholder is-locked" style="max-width: 700px; max-height: 212px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 30.2%;"></div><img class="graf-image" data-image-id="1*5T9llr3ri2GYnl6t9c7PPA.jpeg" data-width="2144" data-height="648" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*5T9llr3ri2GYnl6t9c7PPA.jpeg"></div></figure><p name="8f92" id="8f92" class="graf graf--p graf-after--figure">We will train a model with the help of pytorch, CNN to predict the bird breed in an image.</p><p name="ee39" id="ee39" class="graf graf--p graf-after--p">To know what CNN is and how it works, check the references in the bottom of the story.</p><p name="ec72" id="ec72" class="graf graf--p graf-after--p">source: <a href="https://www.kaggle.com/rohitsohlot/bird-classifier-with-pytorch" data-href="https://www.kaggle.com/rohitsohlot/bird-classifier-with-pytorch" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">notebook,</a> <a href="https://www.kaggle.com/gpiosenka/100-bird-species" data-href="https://www.kaggle.com/gpiosenka/100-bird-species" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">data</a></p><p name="79f7" id="79f7" class="graf graf--p graf-after--p">Lets see how data augmentation and with the use of per-trained models (transfer learning) helps in better and fast result.</p><p name="83c6" id="83c6" class="graf graf--p graf-after--p">An overlook of the data: Data set of 200 bird species. 27503 training images, 1000 test images(5 per species) and 1000 validation images(5 per species.<br> All images are 224 X 224 X 3 (3 channels, RGB) color images in jpg format.</p><p name="2983" id="2983" class="graf graf--p graf-after--p">Steps:</p><ol class="postList"><li name="43c5" id="43c5" class="graf graf--li graf-after--p">We will split the data into train and validation set using the random_split method from tensor’s <a href="https://pytorch.org/docs/stable/data.html#torch.utils.data.random_split" data-href="https://pytorch.org/docs/stable/data.html#torch.utils.data.random_split" class="markup--anchor markup--li-anchor" rel="noopener" target="_blank">torch.utils.data</a> package.</li><li name="dca0" id="dca0" class="graf graf--li graf-after--li">Convert the spitted data to DataLoader, which consists helper API.</li><li name="00b1" id="00b1" class="graf graf--li graf-after--li">We have created 2 datasets, one by normalizing the datasets and second without normalization.</li></ol><figure name="a223" id="a223" class="graf graf--figure graf--iframe graf-after--li"><iframe src="https://jovian.ml/embed?url=https://jovian.ml/rsohlot/bird-classifier/v/9&amp;cellId=12" width="700" height="175" frameborder="0" scrolling="no"></iframe></figure><figure name="3b0b" id="3b0b" class="graf graf--figure graf--iframe graf-after--figure"><iframe src="https://jovian.ml/embed?url=https://jovian.ml/rsohlot/bird-classifier/v/9&amp;cellId=13" width="700" height="175" frameborder="0" scrolling="no"></iframe></figure><p name="ef43" id="ef43" class="graf graf--p graf-after--figure">Data normalization helps in giving equal weight-age to all the channels (R,B,G) while training the weights.</p><div name="fb99" id="fb99" class="graf graf--mixtapeEmbed graf-after--p"><a href="https://stats.stackexchange.com/questions/185853/why-do-we-need-to-normalize-the-images-before-we-put-them-into-cnn" data-href="https://stats.stackexchange.com/questions/185853/why-do-we-need-to-normalize-the-images-before-we-put-them-into-cnn" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://stats.stackexchange.com/questions/185853/why-do-we-need-to-normalize-the-images-before-we-put-them-into-cnn"><strong class="markup--strong markup--mixtapeEmbed-strong">Why do we need to normalize the images before we put them into CNN?</strong><br><em class="markup--em markup--mixtapeEmbed-em">begingroup$ First note: you really should be also dividing by the standard deviation of each feature (pixel) value as…</em>stats.stackexchange.com</a><a href="https://stats.stackexchange.com/questions/185853/why-do-we-need-to-normalize-the-images-before-we-put-them-into-cnn" class="js-mixtapeImage mixtapeImage u-ignoreBlock" data-media-id="75edad1b1acf463885eb04265888854b" data-thumbnail-img-id="0*JY-gSHFxFy23KMtQ" style="background-image: url(https://cdn-images-1.medium.com/fit/c/160/160/0*JY-gSHFxFy23KMtQ);"></a></div><ol class="postList"><li name="a0dd" id="a0dd" class="graf graf--li graf-after--mixtapeEmbed">Load the batch of data to GPU.</li><li name="72ca" id="72ca" class="graf graf--li graf-after--li">Train the model. (10 epochs, 20 epochs)</li></ol><p name="ce1a" id="ce1a" class="graf graf--p graf-after--li">NOTE: I am not resting the weights while traing it with other</p><h3 name="b9e5" id="b9e5" class="graf graf--h3 graf-after--p"><strong class="markup--strong markup--h3-strong">Results</strong></h3><p name="2c68" id="2c68" class="graf graf--p graf-after--h3">10 epochs:</p><p name="c218" id="c218" class="graf graf--p graf-after--p"><strong class="markup--strong markup--p-strong">With an CNN model, get the accuracy :</strong> 41%</p><p name="6f54" id="6f54" class="graf graf--p graf-after--p"><strong class="markup--strong markup--p-strong">With an CNN models on normalize data with get the accuracy : </strong>39%</p><p name="f001" id="f001" class="graf graf--p graf-after--p"><strong class="markup--strong markup--p-strong">By using predefined models we get accuracy up to:</strong> 50% (In only 4–5 epochs)</p><figure name="1208" id="1208" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 544px; max-height: 222px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 40.8%;"></div><img class="graf-image" data-image-id="1*Pu5S6_Bx7nGTNpk4LMOvwg.png" data-width="544" data-height="222" src="https://cdn-images-1.medium.com/max/800/1*Pu5S6_Bx7nGTNpk4LMOvwg.png"></div></figure><p name="1603" id="1603" class="graf graf--p graf-after--figure">We achieved the same accuracy without data per-processing (data normalization) but if analyze the graph the model is over-fitted.As only training error rate is decreasing but validation error rate is increasing with each epoch.</p><figure name="9ec5" id="9ec5" class="graf graf--figure graf--iframe graf-after--p"><iframe src="https://jovian.ml/embed?url=https://jovian.ml/rsohlot/bird-classifier/v/6&amp;cellId=22" width="700" height="175" frameborder="0" scrolling="no"></iframe><figcaption class="imageCaption">Training without data per-processing</figcaption></figure><figure name="7a7a" id="7a7a" class="graf graf--figure graf--iframe graf-after--figure"><iframe src="https://jovian.ml/embed?url=https://jovian.ml/rsohlot/bird-classifier/v/6&amp;cellId=36" width="700" height="175" frameborder="0" scrolling="no"></iframe><figcaption class="imageCaption">Training with data normalization</figcaption></figure><figure name="2c20" id="2c20" class="graf graf--figure graf--iframe graf-after--figure"><iframe src="https://jovian.ml/embed?url=https://jovian.ml/rsohlot/bird-classifier/v/6&amp;cellId=55" width="700" height="175" frameborder="0" scrolling="no"></iframe><figcaption class="imageCaption">Training with use of per-processed model, varying learning rate</figcaption></figure><p name="124b" id="124b" class="graf graf--p graf-after--figure">20 epochs:</p><p name="c7f4" id="c7f4" class="graf graf--p graf-after--p"><strong class="markup--strong markup--p-strong">With an CNN model, get the accuracy :</strong> 74%</p><p name="7847" id="7847" class="graf graf--p graf-after--p"><strong class="markup--strong markup--p-strong">With an CNN models on normalize data with get the accuracy : </strong>78%</p><p name="abc9" id="abc9" class="graf graf--p graf-after--p"><strong class="markup--strong markup--p-strong">By using predefined models we get accuracy up to:</strong> 75%</p><figure name="a153" id="a153" class="graf graf--figure graf--iframe graf-after--p"><iframe src="https://jovian.ml/embed?url=https://jovian.ml/rsohlot/bird-classifier/v/16&amp;cellId=68" width="700" height="175" frameborder="0" scrolling="no"></iframe><figcaption class="imageCaption">Train with CNN, 20 epochs</figcaption></figure><figure name="7662" id="7662" class="graf graf--figure graf--iframe graf-after--figure"><iframe src="https://jovian.ml/embed?url=https://jovian.ml/rsohlot/bird-classifier/v/16&amp;cellId=76" width="700" height="175" frameborder="0" scrolling="no"></iframe><figcaption class="imageCaption">Train with normalized data, 20 epochs</figcaption></figure><figure name="e04e" id="e04e" class="graf graf--figure graf--iframe graf-after--figure"><iframe src="https://jovian.ml/embed?url=https://jovian.ml/rsohlot/bird-classifier/v/16&amp;cellId=88" width="700" height="175" frameborder="0" scrolling="no"></iframe><figcaption class="imageCaption">Pre-trained model, 20 epoch</figcaption></figure><p name="dede" id="dede" class="graf graf--p graf-after--figure graf--trailing">Will soon update the blog with more epoch results, its working and other interesting experiments. Better way is to clone the <a href="https://www.kaggle.com/rohitsohlot/bird-classifier-with-pytorch" data-href="https://www.kaggle.com/rohitsohlot/bird-classifier-with-pytorch" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">notebook </a>and try it yourself. :)</p></div></div></section><section name="3ee2" class="section section--body section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><p name="3839" id="3839" class="graf graf--p graf--leading">References/Learning Links:</p><div name="5a2b" id="5a2b" class="graf graf--mixtapeEmbed graf-after--p"><a href="https://towardsdatascience.com/basics-of-the-classic-cnn-a3dce1225add" data-href="https://towardsdatascience.com/basics-of-the-classic-cnn-a3dce1225add" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://towardsdatascience.com/basics-of-the-classic-cnn-a3dce1225add"><strong class="markup--strong markup--mixtapeEmbed-strong">Basics of the Classic CNN</strong><br><em class="markup--em markup--mixtapeEmbed-em">How a classic CNN (Convolutional Neural Network) work?</em>towardsdatascience.com</a><a href="https://towardsdatascience.com/basics-of-the-classic-cnn-a3dce1225add" class="js-mixtapeImage mixtapeImage u-ignoreBlock" data-media-id="9f9b29f0998330e3b6af932e539b516d" data-thumbnail-img-id="1*kkyW7BR5FZJq4_oBTx3OPQ.png" style="background-image: url(https://cdn-images-1.medium.com/fit/c/160/160/1*kkyW7BR5FZJq4_oBTx3OPQ.png);"></a></div><div name="c4ce" id="c4ce" class="graf graf--mixtapeEmbed graf-after--mixtapeEmbed graf--trailing"><a href="https://cs231n.github.io/transfer-learning/" data-href="https://cs231n.github.io/transfer-learning/" class="markup--anchor markup--mixtapeEmbed-anchor" title="https://cs231n.github.io/transfer-learning/"><strong class="markup--strong markup--mixtapeEmbed-strong">CS231n Convolutional Neural Networks for Visual Recognition</strong><br><em class="markup--em markup--mixtapeEmbed-em">(These notes are currently in draft form and under development) Table of Contents: In practice, very few people train…</em>cs231n.github.io</a><a href="https://cs231n.github.io/transfer-learning/" class="js-mixtapeImage mixtapeImage mixtapeImage--empty u-ignoreBlock" data-media-id="842a8030c7e4315d90f7d66cd95c4792"></a></div></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@rsohlot" class="p-author h-card">Rohit Sohlot</a> on <a href="https://medium.com/p/aa19fbe4a02e"><time class="dt-published" datetime="2020-06-27T08:03:43.167Z">June 27, 2020</time></a>.</p><p><a href="https://medium.com/@rsohlot/predict-the-bird-breed-using-cnn-aa19fbe4a02e" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on July 18, 2020.</p></footer></article></body></html>
